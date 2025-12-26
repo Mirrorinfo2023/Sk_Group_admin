@@ -1,0 +1,112 @@
+.income-transactions-main {
+  padding: 24px;
+}
+
+.income-transactions-grid {
+  padding: 0 16px;
+}
+
+.income-transactions-table-container {
+  overflow-x: auto;
+  margin-bottom: 32px;
+  border: none;
+}
+
+.income-transactions-table {
+  table-layout: auto;
+}
+
+.income-transactions-header-row th {
+  background-color: #F0F3FF;
+  color: black;
+  font-weight: bold;
+  border: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 8px 12px;
+}
+
+.income-transactions-body-row td {
+  border: none;
+  white-space: nowrap;
+  padding: 2px 12px;
+}
+
+.user-id-cell {
+  color: #2198F3;
+  font-weight: 600;
+}
+
+.amount-cell {
+  color: darkgreen;
+  font-weight: 600;
+}
+
+.status-cell.approved {
+  color: green;
+}
+
+.status-cell.rejected {
+  color: red;
+}
+
+.status-cell.pending {
+  color: blue;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.approve-btn {
+  background-color: #2196f3 !important;
+  color: #fff !important;
+  font-weight: 700;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.approve-btn:hover {
+  background-color: #1769aa !important;
+}
+
+.reject-btn {
+  background-color: #ff9800 !important;
+  color: #fff !important;
+  font-weight: 700;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reject-btn:hover {
+  background-color: #c66900 !important;
+}
+
+.no-records-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-records-icon {
+  color: #F44336;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.no-records-text {
+  color: #F44336;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.income-transactions-pagination {
+  border-top: 1px solid #e0e0e0;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-radius: 0 0 16px 16px;
+}
+.abc{
+  font-family: "Courier New" !important;
+  color: red !important;
+}

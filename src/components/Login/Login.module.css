@@ -1,0 +1,908 @@
+.loginForImage {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.backDrop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #00000078;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.backDrop span {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.fullbg {
+  background: #e8e3e3;
+}
+
+.loginCard {
+  background: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.loginBg {
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+}
+
+.loginCard input,
+.loginCard .MuiInputBase-root {
+  border-radius: 10px !important;
+  background: #f7fafd !important;
+  font-size: 1rem;
+}
+
+.loginCard button,
+.loginCard .MuiButton-root {
+  border-radius: 10px;
+  background: linear-gradient(90deg, #1976d2 60%, #43cea2 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(67, 206, 162, 0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.loginCard button:hover,
+.loginCard .MuiButton-root:hover {
+  box-shadow: 0 4px 16px rgba(67, 206, 162, 0.16);
+}
+
+
+/* LoginPage.js */
+.root {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Quadrants */
+.topLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background-color: #fff;
+  z-index: 0;
+}
+
+.topRight {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  background-color: #2198f3;
+  z-index: 0;
+}
+
+.bottomLeft {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background-color: #2198f3;
+  z-index: 0;
+  border-top-left-radius: 60px;
+}
+
+.bottomRight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  background-color: #2198f3;
+  z-index: 0;
+}
+
+/* Container for left panel */
+.leftPanel {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* space between logo (top) and image (bottom) */
+  align-items: flex-start;
+  padding: 5% 3% 0% 3%;
+  height: 100%;
+}
+
+.logoContainer {
+  width: 100% !important;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logoImage {
+  margin-left: 0.1rem;
+}
+
+.personContainer {
+  width: 65%;
+  display: ruby;
+  justify-content: flex-start;
+  margin-top: auto;
+}
+
+.personImage {
+  width: 320 !important;
+  height: auto;
+}
+
+
+/* Container for right panel */
+/* Right panel */
+.rightPanel {
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* keeps the form at the bottom */
+  align-items: flex-end;
+  /* pushes the form towards right */
+  padding: 0 8% 0 0;
+  /* add some space from right and bottom */
+}
+
+/* Form container */
+.formContainer {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 40px 40px 0 0;
+  padding: 32px;
+  margin-bottom: 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0 -10%, 100% 0, 100% 100%, 0% 100%);
+  /* Optional: give some margin from right */
+  margin-right: 20px;
+  min-height: 60vh;
+  /* Always at least 60% of viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* nicely centered */
+}
+
+.heading {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 900 !important;
+  margin-bottom: 8px !important;
+  font-size: 2rem !important;
+  letter-spacing: 0.5px !important;
+}
+
+.subText {
+  margin-bottom: 20px !important;
+  color: #2198f3 !important;
+  font-size: 13px !important;
+}
+
+.subText1 {
+  margin-bottom: 20px !important;
+  color: #5f6366b2 !important;
+  font-size: 13px !important;
+}
+
+.bottomStrip {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333c86;
+  z-index: 0;
+}
+
+/* UserName.js */
+/* Container spacing between fields */
+.container {
+  display: grid;
+  grid-gap: 16px;
+}
+
+/* Label Typography */
+.label {
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  color: black !important;
+  margin-bottom: 1px !important;
+}
+
+/* TextField root */
+.textFieldRoot {
+  height: 31px;
+  font-size: 0.85rem;
+}
+
+.textFieldRoot .MuiOutlinedInput-notchedOutline {
+  border-color: #80808047;
+}
+
+.textFieldRoot:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #80808047;
+}
+
+.textFieldRoot.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #80808047;
+}
+
+/* Input Icons */
+.inputIcon {
+  color: #80808047;
+  font-size: 20px !important;
+}
+
+/* Password toggle button */
+.passwordToggle {
+  padding: 4px;
+}
+
+/* Login Button */
+.loginButton {
+  background-color: #2198F3 !important;
+  text-transform: none !important;
+  font-weight: bold !important;
+  font-size: 0.9rem !important;
+  font-family: 'Roboto Slab', serif !important;
+  min-width: 100px !important;
+  border-radius: 15px !important;
+  transition: all 0.3s ease !important;
+}
+
+.loginButton:hover {
+  background-color: #2198F3 !important;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Arrow icon wrapper */
+.arrowIconWrapper {
+  border: 0.5px solid #ED6A24 !important;
+  border-radius: 50% !important;
+  padding: 0.13px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #ED6A24 !important;
+}
+
+/* Arrow icon */
+.arrowIcon {
+  font-size: 16px !important;
+  font-weight: bolder;
+  color: #fff;
+}
+
+/* Forgot Password */
+.forgotPassword {
+  color: #2198F3;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: 'Roboto Slab', serif;
+}
+
+.captchaWrapper {
+  width: 100%;
+  /* same width as TextField */
+  display: flex;
+  justify-content: flex-start;
+  /* align left like inputs */
+}
+
+/* Google renders an inner <div> around the iframe */
+.captchaWrapper>div {
+  width: 100%;
+  /* stretch to full width */
+  display: flex;
+  justify-content: flex-start;
+  /* keep captcha left-aligned */
+}
+
+
+@media (max-width: 1200px) {
+  .loginCard {
+    max-width: 350px;
+    padding: 20px 12px;
+  }
+
+  .sliderImageWrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+
+  /* Make grid stack vertically */
+  .MuiGrid-container {
+    flex-direction: column !important;
+  }
+
+  /* Left panel (logo + image) */
+  .leftPanel {
+    justify-content: center;
+    /* center content vertically */
+    align-items: flex-start;
+    /* center horizontally */
+    padding: 0;
+    /* reduce padding */
+    height: auto;
+    /* let height adjust naturally */
+    text-align: center;
+    /* center text/images */
+  }
+
+  .logoContainer {
+    justify-content: center;
+    /* logo center */
+    margin-bottom: 20px;
+  }
+
+  .logoImage {
+    margin: auto;
+    height: auto;
+    width: 100%;
+  }
+
+  .personContainer {
+    width: 100%;
+    /* take full width */
+    justify-content: center;
+    /* center image */
+    margin-top: 0;
+    /* remove huge top gap */
+    display: flex;
+    /* ensure flex container */
+  }
+
+  /* Container for the top row inside leftPanel */
+  .leftPanelTopRow {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    /* adjust height as needed */
+  }
+
+  /* Left half with logo */
+  .leftPanelLogoWrapper {
+    width: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    /* some padding */
+  }
+
+  /* Right half empty with background color */
+
+
+  /* Man image row below top row */
+  .leftPanelManRow {
+    width: 100%;
+    background-color: #2198F3;
+    display: flex;
+    justify-content: center;
+    margin: auto auto auto auto;
+  }
+
+  .heading {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 900 !important;
+    margin-bottom: 8px !important;
+    font-size: 2.1rem !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  /* Adjust person image size */
+  .personImage {
+    max-width: 150px !important;
+    height: auto;
+  }
+
+  /* Right panel (login form) row below man image */
+  .rightPanel {
+    width: 100%;
+    background-color: #2198F3;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    height: auto;
+  }
+
+  /* Form container adjustments */
+  .formContainer {
+    max-width: none;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    clip-path: none;
+    min-height: auto;
+    margin: 0;
+  }
+
+  /* Background Quadrants */
+  .topLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: #fff;
+    z-index: 0;
+  }
+
+  .topRight {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    background-color: #2198f3;
+    z-index: 0;
+  }
+
+  .bottomLeft {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #2198f3;
+    z-index: 0;
+    border-top-left-radius: 25px;
+  }
+
+  .bottomRight {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-color: #2198f3;
+    z-index: 0;
+  }
+
+
+  .loginCard {
+    margin: 0 auto;
+  }
+
+  .slideBox {
+    display: none !important;
+    height: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+
+  /* Make grid stack vertically */
+  .MuiGrid-container {
+    flex-direction: column !important;
+  }
+
+  /* Left panel (logo + image) */
+  .leftPanel {
+    justify-content: center;
+    /* center content vertically */
+    align-items: flex-start;
+    /* center horizontally */
+    padding: 0;
+    /* reduce padding */
+    height: auto;
+    /* let height adjust naturally */
+    text-align: center;
+    /* center text/images */
+  }
+
+  .logoContainer {
+    justify-content: center;
+    /* logo center */
+    margin-bottom: 20px;
+  }
+
+  .logoImage {
+    margin: auto;
+    height: auto;
+    width: 100%;
+  }
+
+  .personContainer {
+    width: 100%;
+    /* take full width */
+    justify-content: center;
+    /* center image */
+    margin-top: 0;
+    /* remove huge top gap */
+    display: flex;
+    /* ensure flex container */
+  }
+
+  /* Container for the top row inside leftPanel */
+  .leftPanelTopRow {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    /* adjust height as needed */
+  }
+
+  /* Left half with logo */
+  .leftPanelLogoWrapper {
+    width: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    /* some padding */
+  }
+
+  /* Right half empty with background color */
+
+
+  /* Man image row below top row */
+  .leftPanelManRow {
+    width: 100%;
+    background-color: #2198F3;
+    display: flex;
+    justify-content: center;
+    margin: auto auto auto auto;
+  }
+
+  .heading {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 900 !important;
+    margin-bottom: 8px !important;
+    font-size: 2.1rem !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  /* Adjust person image size */
+  .personImage {
+    max-width: 150px !important;
+    height: auto;
+  }
+
+  /* Right panel (login form) row below man image */
+  .rightPanel {
+    width: 100%;
+    background-color: #2198F3;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    height: auto;
+  }
+
+  /* Form container adjustments */
+  .formContainer {
+    max-width: none;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    clip-path: none;
+    min-height: auto;
+    margin: 0;
+  }
+
+  /* Background Quadrants */
+  .topLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: #fff;
+    z-index: 0;
+  }
+
+  .topRight {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    background-color: #2198f3;
+    z-index: 0;
+  }
+
+  .bottomLeft {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #2198f3;
+    z-index: 0;
+    border-top-left-radius: 25px;
+  }
+
+  .bottomRight {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-color: #2198f3;
+    z-index: 0;
+  }
+
+
+
+  /* Login card elements scaling */
+  .loginCard {
+    max-width: 90vw;
+    /* better mobile fit */
+    height: auto;
+    padding: 16px !important;
+  }
+
+  .loginCard input,
+  .loginCard .MuiInputBase-root {
+    font-size: 1rem;
+    /* readable text on small screens */
+  }
+
+  .loginCard button,
+  .loginCard .MuiButton-root {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+
+
+
+
+
+
+  .loginCard {
+    max-width: 80vw;
+    height: auto;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 0 !important
+  }
+
+  .css-13xfq8m-MuiTabPanel-root {
+    padding: 0px !important;
+  }
+
+  .MuiGrid-container {
+    flex-direction: column !important;
+  }
+
+  .loginCard input,
+  .loginCard .MuiInputBase-root {
+    font-size: 0.98rem;
+  }
+
+  .loginCard button,
+  .loginCard .MuiButton-root {
+    font-size: 0.95rem;
+    padding: 7px;
+  }
+}
+
+@media (max-width: 400px) {
+  .loginCard {
+    max-width: 85vw;
+    margin: auto;
+  }
+
+  .MuiGrid-container {
+    flex-direction: column !important;
+  }
+
+  /* Left panel (logo + image) */
+  .leftPanel {
+    justify-content: center;
+    /* center content vertically */
+    align-items: flex-start;
+    /* center horizontally */
+    padding: 0;
+    /* reduce padding */
+    height: auto;
+    /* let height adjust naturally */
+    text-align: center;
+    /* center text/images */
+  }
+
+  .logoContainer {
+    justify-content: center;
+    /* logo center */
+    margin-bottom: 20px;
+  }
+
+  .logoImage {
+    margin: auto;
+    height: auto;
+    width: 100%;
+  }
+
+  .personContainer {
+    width: 100%;
+    /* take full width */
+    justify-content: center;
+    /* center image */
+    margin-top: 0;
+    /* remove huge top gap */
+    display: flex;
+    /* ensure flex container */
+  }
+
+  /* Container for the top row inside leftPanel */
+  .leftPanelTopRow {
+    display: flex;
+    width: 100%;
+    height: 110px;
+    /* adjust height as needed */
+  }
+
+  /* Left half with logo */
+  .leftPanelLogoWrapper {
+    width: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    /* some padding */
+  }
+
+  /* Right half empty with background color */
+
+
+  /* Man image row below top row */
+  .leftPanelManRow {
+    width: 100%;
+    background-color: #2198F3;
+    display: flex;
+    justify-content: center;
+    margin: auto auto auto auto;
+  }
+
+  .heading {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 900 !important;
+    margin-bottom: 8px !important;
+    font-size: 1.4rem !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  /* Adjust person image size */
+  .personImage {
+    max-width: 150px !important;
+    height: auto;
+  }
+
+  /* Right panel (login form) row below man image */
+  .rightPanel {
+    width: 100%;
+    background-color: #2198F3;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    height: auto;
+  }
+
+  /* Form container adjustments */
+  .formContainer {
+    max-width: 400px;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    clip-path: none;
+    min-height: auto;
+    margin: 0;
+  }
+
+  /* Background Quadrants */
+  .topLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: #fff;
+    z-index: 0;
+  }
+
+  .topRight {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    background-color: #2198f3;
+    z-index: 0;
+  }
+
+  .bottomLeft {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #2198f3;
+    z-index: 0;
+    border-top-left-radius: 25px;
+  }
+
+  .bottomRight {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-color: #2198f3;
+    z-index: 0;
+  }
+
+
+
+  /* Login card elements scaling */
+  .loginCard {
+    max-width: 90vw;
+    /* better mobile fit */
+    height: auto;
+    padding: 16px !important;
+  }
+
+  .loginCard input,
+  .loginCard .MuiInputBase-root {
+    font-size: 1rem;
+    /* readable text on small screens */
+  }
+
+  .loginCard button,
+  .loginCard .MuiButton-root {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+}
+
+.loginGridCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loginDivider {
+  margin: 24px 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  width: 100%;
+}
+
+.loginCard .MuiIconButton-root {
+  background: transparent !important;
+}

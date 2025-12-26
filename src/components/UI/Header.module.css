@@ -1,0 +1,29 @@
+.menuIconDesign {
+    position: fixed !important;
+    background: #1976d2 !important;
+    left: 8px;
+    top: 20%;
+    transform: translateY(-50%);
+    color: #fff !important;
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    z-index: 11 !important;
+}
+
+.loaderRedirect {
+    position: absolute;
+    top: 0;
+    height: 3px;
+    left: 0;
+    background: #1976d2;
+    animation: loader 3s forwards;
+}
+
+@keyframes loader {
+    from {
+        right: 100%;
+    }
+    to {
+        right: 0%;
+    }
+}

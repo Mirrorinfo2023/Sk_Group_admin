@@ -1,0 +1,100 @@
+.tableContainer {
+    overflow-x: auto;
+    margin-bottom: 32px;
+    /* 4 * 8px */
+    box-shadow: none;
+    border: none;
+}
+
+.table {
+    table-layout: auto;
+}
+
+.table td,
+.table th {
+    white-space: nowrap;
+    padding: 8px 12px;
+}
+
+.tableHeadRow {
+    background-color: #F0F3FF;
+}
+
+.tableHeadRow th {
+    color: black;
+    font-weight: bold;
+    border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tableRow td {
+    border: none;
+    background-color: transparent;
+}
+
+.userIdCell {
+    color: #2198F3 !important;
+    font-weight: 600;
+}
+
+.amountCell {
+    color: #35b535e3 !important;
+    font-weight: 600;
+}
+
+.redeemDate {
+    white-space: nowrap;
+}
+
+.statusApproved {
+    color: green;
+}
+
+.statusRejected {
+    color: red;
+}
+
+.statusPending {
+    color: blue;
+}
+
+.actionButtons button {
+    margin: 8px;
+}
+
+.modalBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modalIcon {
+    font-size: 40px;
+    margin-left: 160px;
+    /* 20 * 8px */
+}
+
+.modalOkButton {
+    margin-left: 160px;
+}
+
+.noRecordsBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noRecordsIcon {
+    color: #F44336;
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.noRecordsText {
+    color: #F44336;
+    font-weight: bold;
+    font-size: 18px;
+}

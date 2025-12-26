@@ -1,0 +1,134 @@
+.container {
+    padding: 0 16px;
+}
+
+.tableContainer {
+    overflow-x: auto;
+    margin-bottom: 32px;
+    box-shadow: none;
+    border: none;
+}
+
+.table {
+    table-layout: auto;
+}
+
+.table td,
+.table th {
+    white-space: nowrap;
+    padding: 8px 12px;
+}
+
+.tableHeadRow {
+    background-color: #F0F3FF;
+}
+
+.tableHeadRow th {
+    color: black;
+    font-weight: bold;
+    border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tableRow td {
+    border: none;
+    background-color: transparent;
+}
+
+.userIdCell {
+    color: #2198F3 !important;
+    font-weight: 600;
+}
+
+.amountCell {
+    color: #35b535e3 !important;
+    font-weight: 600;
+}
+
+.redeemDate {
+    white-space: nowrap;
+}
+
+.statusApproved {
+    color: green;
+}
+
+.statusRejected {
+    color: red;
+}
+
+.statusPending {
+    color: blue;
+}
+
+.actionButtons button {
+    margin: 8px;
+}
+
+.modalBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    outline: none;
+    width: 400px;
+    margin: auto;
+    margin-top: 15%;
+}
+
+.modalIcon {
+    font-size: 40px !important;
+    margin-left: 160px;
+}
+
+.modalOkButton {
+    margin-left: 160px !important;
+    margin-top: 16px;
+}
+
+.textarea {
+    width: 400px;
+    margin-top: 16px;
+}
+
+.noRecordsBox {
+    text-align: center;
+}
+
+.noRecordsText {
+    color: #F44336;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+.headerBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    /* replaces mb: 2 */
+}
+
+.searchField {
+    width: 250px;
+    /* replaces sx={{ width: '250px' }} */
+}
+
+.generateButton {
+    border-radius: 8px;
+    /* replaces borderRadius: 2 */
+    font-weight: 700;
+    font-size: 16px;
+    padding: 9.6px 24px;
+    /* replaces px: 3, py: 1.2 (1.2*8 = 9.6px) */
+    background: linear-gradient(90deg, #2196f3 0%, #21cbf3 100%) !important;
+    box-shadow: 0 2px 8px 0 rgba(33, 203, 243, 0.15) !important;
+    text-transform: none !important;
+    white-space: nowrap;
+}
