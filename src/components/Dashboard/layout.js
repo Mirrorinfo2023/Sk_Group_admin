@@ -35,128 +35,16 @@ import CampaignIcon from '@mui/icons-material/Campaign';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import { useSelector, useDispatch } from 'react-redux';
 
-
-
-const drawerWidth = 200;
-
 let menuArray = [
   { redirect: 'dashboard', name: 'Dashboard', parent: 'dashboard', icon: <DashboardIcon sx={{ fontSize: 20 }} /> },
   { redirect: '#', name: 'Masters', parent: 'masters', icon: <WidgetsIcon sx={{ fontSize: 20 }} /> },
-  { redirect: '#', name: 'Affilate', parent: 'networking', icon: <PeopleIcon sx={{ fontSize: 20 }} /> },
-  { redirect: '#', name: 'Wallet', parent: 'wallet', icon: <AccountBalanceWalletIcon sx={{ fontSize: 20 }} /> },
-  { redirect: '#', name: 'Marketing', parent: 'marketing', icon: <CampaignIcon sx={{ fontSize: 20 }} /> },
-  // { redirect: '#', name: 'Recharge/Payment', parent: 'recharge', icon: <PaymentIcon sx={{ fontSize: 20 }} /> },
-  // { redirect: '#', name: 'Staff', parent: 'staff', icon: <PeopleIcon sx={{ fontSize: 20 }} /> },
-  // { redirect: '#', name: 'Investment', parent: 'investment', icon: <PeopleIcon sx={{ fontSize: 20 }} /> },
-  // { redirect: '#', name: 'Settings', parent: 'setting', icon: <SettingsIcon sx={{ fontSize: 20 }} /> }
+  { redirect: 'enquiry', name: 'Enquiry ', parent: 'Enquiry', icon: <PeopleIcon sx={{ fontSize: 20 }} /> },
 ]
 
 let menuArray1 = [
-
-  { redirect: 'get-banners', name: 'Banners', parent: 'masters' },
-  // { redirect: 'leads-category', name: 'Lead Category', parent: 'masters' },
-  // { redirect: 'leads-report', name: 'Lead List', parent: 'masters' },
-  // { redirect: 'leads-user-action-report', name: 'Leads User Action Report', parent: 'masters' },
-  // { redirect: 'leads-user-form-request-list', name: 'Leads User Form Report', parent: 'masters' },
-  // { redirect: 'leads-user-track-report', name: 'Leads User Track Report', parent: 'masters' },
-  // { redirect: 'graphics-report', name: 'Marketing Report', parent: 'masters' },
-  // { redirect: 'meeting', name: 'Meeting Report', parent: 'masters' },
-  { redirect: 'get-meeting-enroll-report', name: 'Meeting Enroll Report', parent: 'masters' },
-  // { redirect: 'product-list', name: 'Product List', parent: 'masters' },
-  // { redirect: 'profit-return', name: 'Profit Return', parent: 'masters' },
-  { redirect: 'massage-setting', name: 'Massage Setting', parent: 'masters' },
-  // { redirect: 'slab-setting', name: 'marketing', parent: 'masters' },
-  { redirect: 'whatsapp-setting', name: 'Whatsapp Setting', parent: 'masters' },
-  { redirect: 'new-offer', name: 'New Offer', parent: 'masters' },
-  { redirect: 'crm', name: 'CRM', parent: 'masters' },
-  { redirect: 'get-privacy-policy', name: 'Privacy Policy Management', parent: 'masters' },
-
+  { redirect: 'update-site', name: 'Update site', parent: 'masters' },
+  { redirect: 'existing-site', name: 'Existing site', parent: 'masters' }
 ];
-
-let menuArray2 = [
-  // { redirect: 'royality-income', name: 'Royality Income', parent: 'networking' },
-  { redirect: 'redeem-report', name: 'Redeem Report', parent: 'networking' },
-  { redirect: 'income-report', name: 'Income Report', parent: 'networking' },
-  { redirect: 'prime-user-report', name: 'Prime User Report', parent: 'networking' },
-  { redirect: 'courses', name: 'Courses', parent: 'networking' },
-  { redirect: 'profit-return', name: 'Profit Return', parent: 'networking' },
-  { redirect: 'ip-management', name: 'Ip Management', parent: 'networking' },
-  { redirect: 'todays-updates', name: "Today's Update", parent: 'networking' },
-
-  // { redirect: 'prime-product-list', name: 'Prime Product Report', parent: 'networking' },
-  // { redirect: 'package-purchase-list', name: 'Package Purchase Request', parent: 'networking' },
-]
-
-let menuArray3 = [
-  // { redirect: 'user-summary', name: 'User Summary', parent: 'wallet' },
-  { redirect: 'user-details', name: 'User Details', parent: 'wallet' },
-  { redirect: 'otp', name: 'OTP Report', parent: 'wallet' },
-  { redirect: 'kyc-report', name: 'KYC Report', parent: 'wallet' },
-  { redirect: 'return-report', name: 'Return Report', parent: 'wallet' },
-  { redirect: 'feedback-report', name: 'Feedback Report', parent: 'wallet' },
-  { redirect: 'investment', name: 'Prime Activation', parent: 'wallet' },
-  { redirect: 'add-money-request', name: 'Add Money Request', parent: 'wallet' },
-  // { redirect: 'cashback-report', name: 'Cashback Report', parent: 'wallet' },
-  // { redirect: 'prime-wallet-report', name: 'Prime Wallet Report', parent: 'wallet' },
-  // { redirect: 'epin-wallet-summary', name: 'User Epin Summary', parent: 'wallet' },
-  // { redirect: 'idcard-request', name: 'Id Card Report', parent: 'wallet' },
-]
-
-let menuArray4 = [
-  { redirect: 'fcm-notification', name: 'FCM Notification', parent: 'marketing' },
-  // { redirect: 'ebook-list', name: 'Ebook', parent: 'marketing' },
-  { redirect: 'rating', name: 'Rating List', parent: 'marketing' },
-  { redirect: 'zoho', name: 'Zoho Meeting', parent: 'marketing' },
-  // { redirect: 'affiliate-user-track-report', name: 'Affiliate User Track Report', parent: 'marketing' },
-  // { redirect: 'affiliate-link-category', name: 'Affiliate Link Category', parent: 'marketing' },
-  // { redirect: 'affiliate-link-list', name: 'Affiliate Link List', parent: 'marketing' },
-  // { redirect: 'upload-invoice-list', name: 'Uploaded Invoice List', parent: 'marketing' },
-  // { redirect: 'campaign-list', name: 'Campaigns', parent: 'marketing' },
-]
-
-let menuArray5 = [
-  { redirect: 'recharge-report', name: 'Recharge Report', parent: 'recharge' },
-  { redirect: 'recharge-hold-list', name: 'Recharge Hold Report', parent: 'recharge' },
-  { redirect: 'bill-payment-report', name: 'Bill Payment', parent: 'recharge' },
-  { redirect: 'bill-payment-hold-list', name: 'Bill Payment Hold Report', parent: 'recharge' },
-]
-
-let menuArray6 = [
-  { redirect: 'employee-role', name: 'Staff Role', parent: 'staff' },
-  { redirect: 'employee-list', name: 'Staff', parent: 'staff' },
-]
-
-
-let menuArray7 = [
-  // { redirect: 'system-setting', name: 'System Setting', parent: 'setting' },
-  // { redirect: 'recharge-panel', name: 'Recharge Panel', parent: 'setting' },
-  // { redirect: 'whatsapp-setting', name: 'Whatsapp Setting', parent: 'setting' },
-  // { redirect: 'pages-setting', name: 'Content', parent: 'setting' },
-  // { redirect: 'partner-transaction-history', name: 'Partner Transactions', parent: 'setting' },
-  // { redirect: 'massage-setting', name: 'Massage Setting', parent: 'setting' },
-  // { redirect: 'slab-setting', name: 'marketing', parent: 'setting' }
-]
-
-let menuArray8 = [
-  // { redirect: 'investment', name: 'Prime', parent: 'investment' },
-  // { redirect: 'employee-list', name: 'Staff', parent: 'staff' },
-]
-
-
-
-const FireNav = styled(List)({
-  '& .MuiListItemButton-root': {
-    paddingLeft: 24,
-    paddingRight: 24,
-  },
-  '& .MuiListItemIcon-root': {
-    minWidth: 0,
-    marginRight: 16,
-  },
-  '& .MuiSvgIcon-root': {
-    fontSize: 20,
-  },
-});
 
 const RECENT_TABS_KEY = 'recentTabs';
 const RECENT_TABS_LIMIT = 5;
@@ -229,23 +117,7 @@ function Layout(props) {
     } else if (checkPathInMenuArray(menuArray2)) {
       setSelectedMenu(2);
       setCurrentMenu('networking');
-    } else if (checkPathInMenuArray(menuArray3)) {
-      setSelectedMenu(3);
-      setCurrentMenu('wallet');
-    } else if (checkPathInMenuArray(menuArray4)) {
-      setSelectedMenu(4);
-      setCurrentMenu('marketing');
-    } else if (checkPathInMenuArray(menuArray5)) {
-      setSelectedMenu(5);
-      setCurrentMenu('recharge');
-    } else if (checkPathInMenuArray(menuArray6)) {
-      setSelectedMenu(6);
-      setCurrentMenu('staff');
-    }
-    // else if (checkPathInMenuArray(menuArray7)) {
-    //   setSelectedMenu(7);
-    //   setCurrentMenu('setting');
-    // }
+    } 
     else {
       setSelectedMenu(0);
     }
