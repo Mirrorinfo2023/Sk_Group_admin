@@ -44,7 +44,8 @@ let menuArray = [
 
 let menuArray1 = [
   { redirect: 'update-site', name: 'Update site', parent: 'masters' },
-  { redirect: 'existing-site', name: 'Existing site', parent: 'masters' }
+  { redirect: 'existing-site', name: 'Existing site', parent: 'masters' },
+  { redirect: 'category-report', name: 'Category Report', parent: 'masters' }
 ];
 
 const RECENT_TABS_KEY = 'recentTabs';
