@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import UserName from "./UserName";
 import ForgotPassword from "./forgot-password";
-import AppLogo from "../../../public/Mayway_logo.jpeg";
+// import AppLogo from "../../../public/Mayway_logo.jpeg";
+import AppLogo from "../../../public/sk_grp_logo.png";
 import manWithLap from "../../../public/man_with_lap1.png";
 import styles from "./Login.module.css"; // Import styles
 

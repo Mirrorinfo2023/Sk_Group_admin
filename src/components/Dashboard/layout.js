@@ -17,7 +17,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import CircularProgress from '@mui/material/CircularProgress';
 //import Typography from '@mui/material/Typography';
-import AppLogo from '../../../public/Mayway_logo.jpeg'
+// import AppLogo from '../../../public/Mayway_logo.jpeg'
+import AppLogo from '../../../public/sk_grp_logo.png'
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
@@ -53,7 +54,7 @@ function getMenuNameByPath(path) {
   // Remove leading slash
   const cleanPath = path.replace(/^\//, '');
   // Search all menu arrays
-  const allMenus = [menuArray, ...Object.values({ menuArray1, menuArray2, menuArray3, menuArray4, menuArray5, menuArray6, })];
+  const allMenus = [menuArray, ...Object.values({ menuArray1 })];
   for (const arr of allMenus) {
     const found = arr.find(item => item.redirect === cleanPath);
     if (found) return found.name;
@@ -63,7 +64,7 @@ function getMenuNameByPath(path) {
 
 function isWorkflowTab(path) {
   const cleanPath = path.replace(/^\//, '').split('?')[0].split('#')[0];
-  const allMenus = [menuArray, ...Object.values({ menuArray1, menuArray2, menuArray3, menuArray4, menuArray5, menuArray6, })];
+  const allMenus = [menuArray, ...Object.values({ menuArray1 })];
   for (const arr of allMenus) {
     if (arr.some(item => item.redirect === cleanPath)) return true;
   }
@@ -114,10 +115,7 @@ function Layout(props) {
     if (checkPathInMenuArray(menuArray1)) {
       setSelectedMenu(1);
       setCurrentMenu('masters');
-    } else if (checkPathInMenuArray(menuArray2)) {
-      setSelectedMenu(2);
-      setCurrentMenu('networking');
-    } 
+    }
     else {
       setSelectedMenu(0);
     }
@@ -291,14 +289,7 @@ function Layout(props) {
 
   // Map parent to submenu array
   const submenuMap = {
-    masters: menuArray1,
-    networking: menuArray2,
-    wallet: menuArray3,
-    marketing: menuArray4,
-    recharge: menuArray5,
-    staff: menuArray6,
-    // investment: menuArray8,
-    // setting: menuArray7,
+    masters: menuArray1
   };
 
   // New renderMenu for dropdowns
@@ -471,7 +462,7 @@ function Layout(props) {
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <Image src={AppLogo} height={40} width={80} alt="Logo" style={{ objectFit: 'contain', borderRadius: 8, background: '#fff', padding: 2 }} />
           <Typography variant="h6" sx={{ fontWeight: 700, fontSize: { xs: '1.1rem', sm: '1.3rem' }, letterSpacing: 1, ml: 1, color: '#fff' }}>
-            MAY<span style={{ color: '#ffe082' }}>WAY</span>
+            SK <span style={{ color: '#ffe082' }}>Group</span>
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
